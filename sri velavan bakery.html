@@ -16,24 +16,29 @@
 
 body {
     background: #fff5e6;
-    color: #492313;
+    color: #333;
 }
 
 header {
-    background: linear-gradient(90deg, #ff512f, #f09819);
+    background: linear-gradient(120deg, #ff512f, #ff9800);
     color: white;
     text-align: center;
-    padding: 30px;
+    padding: 35px 15px;
 }
 
 header h1 {
-    font-size: 42px;
+    font-size: 38px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 17px;
 }
 
 nav {
-    background: #7b241c;
-    text-align: center;
+    background: #5b8c36;
     padding: 15px;
+    text-align: center;
 }
 
 nav a {
@@ -44,77 +49,104 @@ nav a {
 }
 
 .hero {
-    background: linear-gradient(135deg, #ffcc33, #ff6699, #a855f7);
-    color: white;
     text-align: center;
-    padding: 85px 20px;
+    padding: 45px 15px;
+    background: linear-gradient(120deg, #ffe082, #ffccbc);
 }
 
 .hero h2 {
-    font-size: 42px;
-    margin-bottom: 15px;
+    color: #d84315;
+    font-size: 30px;
 }
 
 .hero p {
-    font-size: 20px;
-    margin-bottom: 25px;
-}
-
-.btn {
-    background: #7b241c;
-    color: white;
-    padding: 13px 25px;
-    text-decoration: none;
-    border-radius: 25px;
-    display: inline-block;
-}
-
-section {
-    padding: 45px 20px;
-    text-align: center;
-}
-
-section h2 {
-    color: #d35400;
-    font-size: 32px;
-    margin-bottom: 25px;
+    margin: 15px;
+    font-size: 18px;
 }
 
 .products {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.products h2 {
+    color: #e65100;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 22px;
+    max-width: 1100px;
+    margin: auto;
 }
 
 .card {
     background: white;
-    width: 220px;
-    padding: 25px;
+    padding: 25px 15px;
     border-radius: 15px;
     box-shadow: 0 4px 12px #0002;
-    border-bottom: 6px solid #ff9800;
+    border-bottom: 5px solid #ff9800;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
 }
 
 .card h3 {
     color: #e65100;
+    font-size: 21px;
     margin-bottom: 12px;
 }
 
-.card p {
-    margin: 8px;
+.price {
+    color: #228b22;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 12px;
+}
+
+.order {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    padding: 11px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.order:hover {
+    background: #128c45;
 }
 
 .about {
-    background: #ffe0b2;
+    background: #dcedc8;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.about h2 {
+    color: #33691e;
+    margin-bottom: 15px;
 }
 
 .contact {
-    background: #d1f2eb;
+    text-align: center;
+    padding: 35px 15px;
+    background: #ffe0b2;
+}
+
+.contact h2 {
+    color: #e65100;
+    margin-bottom: 15px;
 }
 
 footer {
-    background: #7b241c;
+    background: #333;
     color: white;
     text-align: center;
     padding: 20px;
@@ -125,8 +157,8 @@ footer {
 <body>
 
 <header>
-    <h1>🥐 SRI VELAVAN BAKES 🥐</h1>
-    <p>Fresh Taste • Sweet Moments • Happy Hearts</p>
+    <h1>🍰 SRI VELAVAN BAKES 🍰</h1>
+    <p>Fresh Taste • Sweet Moments • Happy Customers</p>
 </header>
 
 <nav>
@@ -136,43 +168,58 @@ footer {
     <a href="#contact">Contact</a>
 </nav>
 
-<div class="hero" id="home">
+<section class="hero" id="home">
     <h2>Welcome to Sri Velavan Bakes!</h2>
-    <p>Every Bite is Full of Happiness!</p>
-    <a href="#products" class="btn">Explore Our Products</a>
-</div>
+    <p>Delicious Bakery Products at Best Prices!</p>
+    <p>Freshness and Happiness in Every Bite ❤️</p>
+    <a href="#products" class="order">Explore Products</a>
+</section>
 
-<section id="products">
-    <h2>Our Delicious Products</h2>
+<section class="products" id="products">
+    <h2>🛍️ Our Products & Sales</h2>
 
-    <div class="products">
+    <div class="container">
 
         <div class="card">
-            <h3>🎂 Cakes</h3>
-            <p>Birthday Cakes</p>
-            <p>Chocolate Cakes</p>
-            <p>Black Forest Cakes</p>
+            <h3>🎂 Birthday Cake</h3>
+            <p>Fresh and Delicious Cake</p>
+            <div class="price">₹450</div>
+            <a class="order" href="#" onclick="order('Birthday Cake',450)">WhatsApp Order</a>
         </div>
 
         <div class="card">
-            <h3>🍪 Biscuits</h3>
-            <p>Butter Biscuits</p>
-            <p>Cookies</p>
-            <p>Cream Biscuits</p>
+            <h3>🧁 Cup Cake</h3>
+            <p>Soft and Sweet Cup Cakes</p>
+            <div class="price">₹50</div>
+            <a class="order" href="#" onclick="order('Cup Cake',50)">WhatsApp Order</a>
         </div>
 
         <div class="card">
-            <h3>🥐 Bakery Items</h3>
-            <p>Puffs</p>
-            <p>Bread</p>
-            <p>Buns</p>
+            <h3>🍕 Pizza</h3>
+            <p>Cheesy and Tasty Pizza</p>
+            <div class="price">₹120</div>
+            <a class="order" href="#" onclick="order('Pizza',120)">WhatsApp Order</a>
         </div>
 
         <div class="card">
-            <h3>🍩 Sweets</h3>
-            <p>Doughnuts</p>
-            <p>Pastries</p>
-            <p>Special Sweets</p>
+            <h3>🍔 Burger</h3>
+            <p>Fresh and Crispy Burger</p>
+            <div class="price">₹80</div>
+            <a class="order" href="#" onclick="order('Burger',80)">WhatsApp Order</a>
+        </div>
+
+        <div class="card">
+            <h3>🥐 Puffs</h3>
+            <p>Hot and Crispy Puffs</p>
+            <div class="price">₹20</div>
+            <a class="order" href="#" onclick="order('Puffs',20)">WhatsApp Order</a>
+        </div>
+
+        <div class="card">
+            <h3>🍩 Donuts</h3>
+            <p>Sweet and Delicious Donuts</p>
+            <div class="price">₹60</div>
+            <a class="order" href="#" onclick="order('Donuts',60)">WhatsApp Order</a>
         </div>
 
     </div>
@@ -182,23 +229,34 @@ footer {
     <h2>About Sri Velavan Bakes</h2>
     <p>
         Sri Velavan Bakes offers delicious bakery products
-        made to bring happiness to every customer.
-        Enjoy fresh taste and sweet moments with us!
+        with great taste and quality.
+        Visit us and enjoy every bite!
     </p>
 </section>
 
 <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p><b>Shop Name:</b> Sri Velavan Bakes</p>
-    <p><b>Phone:</b> Add Your Phone Number</p>
-    <p><b>Address:</b> Add Your Shop Address</p>
-    <p><b>Opening Hours:</b> 8 AM – 9 PM</p>
+    <h2>📞 Contact Us</h2>
+    <p>For orders and enquiries, contact us on WhatsApp.</p>
+    <br>
+    <a class="order" href="https://wa.me/91XXXXXXXXXX">
+        Order Now on WhatsApp
+    </a>
 </section>
 
 <footer>
     <p>© 2026 Sri Velavan Bakes | All Rights Reserved</p>
     <p>Thank You! Visit Again ❤️</p>
 </footer>
+
+<script>
+const whatsappNumber = "91XXXXXXXXXX";
+
+function order(product, price) {
+    const message = `Hello Sri Velavan Bakes! I want to order ${product}. Price: ₹${price}.`;
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
